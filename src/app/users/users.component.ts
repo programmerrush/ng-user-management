@@ -220,7 +220,7 @@ export class UsersComponent {
     // } else {
     //   this.allTeams = JSON.parse(teams);
     // }
-    console.log(this.allTeams);
+    // console.log(this.allTeams);
   }
 
   constructor(private http: HttpClient) {

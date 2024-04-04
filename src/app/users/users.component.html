@@ -61,18 +61,24 @@
             >View Teams</a
           ><br /><br />
 
-          <label>
+          <label style="color: white; font-size: large">
             Add new team:
-            <input type="text" [(ngModel)]="team.name" />
-            <button (click)="addNewTeam()" [disabled]="team.name == ''">
-              Add new team
+            <input type="text" [(ngModel)]="team.name" />&nbsp;
+            <button
+              class="btn btn-success"
+              (click)="addNewTeam()"
+              [disabled]="team.name == ''"
+            >
+              Add new team</button
+            >&nbsp;
+            <button class="btn btn-danger" (click)="resetTeam()">
+              Delete all team
             </button>
-            <button (click)="resetTeam()">Clear team</button>
           </label>
 
           <br />
           <div>
-            <label>
+            <label style="color: white; font-size: large">
               Available: {{ filters.available }}
               <!-- <select [(ngModel)]="filters.available">
                 <option value="null">All</option>
@@ -86,25 +92,26 @@
                 [(ngModel)]="filters.available"
               />
             </label>
-            <label>
+            &nbsp;&nbsp;
+            <label style="color: white; font-size: large">
               Gender: {{ filters.gender }}
               <select (change)="applyFilters()" [(ngModel)]="filters.gender">
                 <option value="null">All</option>
                 <option *ngFor="let gender of allGenders" [value]="gender">
                   {{ gender }}
                 </option>
-              </select>
-            </label>
-            <label>
+              </select> </label
+            >&nbsp;&nbsp;
+            <label style="color: white; font-size: large">
               Domain: {{ filters.domain }}
               <select (change)="applyFilters()" [(ngModel)]="filters.domain">
                 <option value="null">All</option>
                 <option *ngFor="let gender of allDomains" [value]="gender">
                   {{ gender }}
                 </option>
-              </select>
-            </label>
-            <label>
+              </select> </label
+            >&nbsp;&nbsp;
+            <label style="color: white; font-size: large">
               Search:
               <input
                 type="text"
@@ -114,7 +121,9 @@
             </label>
             <br />
             <!-- <button (click)="applyFilters()">Apply Filters</button> -->
-            <button (click)="reset()">Reset Filters</button>
+            <button class="btn btn-secondary" (click)="reset()">
+              Reset Filters
+            </button>
           </div>
           <br />
           <ngb-pagination

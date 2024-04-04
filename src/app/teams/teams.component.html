@@ -81,6 +81,7 @@
 
           <h1 style="color: white">
             Selected team : <b>{{ allTeams[viewTeam].name }}</b>
+            <!-- {{ allTeams.length }} -->
           </h1>
 
           <!-- <label>
@@ -119,7 +120,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-12">
           <div class="row row-grid">
-            @if (allTeams.length >0) {
+            @if ( allTeams.length > 0 && allTeams[0].name != null ) {
 
             <div
               *ngFor="let item of allTeams[viewTeam].members"
@@ -195,6 +196,7 @@
                 </div>
               </div>
             </div>
+
             }@else {
             <div class="col-lg-12">
               <div class="alert alert-danger" role="alert">

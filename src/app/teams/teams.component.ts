@@ -154,7 +154,7 @@ export class TeamsComponent {
     if (localStorage.getItem('teams') != null) {
       this.allTeams = JSON.parse(String(localStorage.getItem('teams')));
     } else {
-      this.allTeams = [];
+      this.allTeams = [{ name: null }];
     }
     // this.allTeams = JSON.parse(teams);
     // if (this.allTeams == null) {
@@ -162,7 +162,7 @@ export class TeamsComponent {
     // } else {
     //   this.allTeams = JSON.parse(teams);
     // }
-    console.log(this.allTeams);
+    // console.log(this.allTeams);
   }
 
   constructor(private http: HttpClient) {
