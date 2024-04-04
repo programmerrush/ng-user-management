@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import data from './heliverse_mock_data.json';
-import { ImageSizePipe } from '../image-size.pipe';
+import data from '../../assets/heliverse_mock_data.json';
+import { ImageSizePipe } from '../pipes/image-size.pipe';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -13,6 +13,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 export class UserProfileComponent {
   user: any;
   id: number = 0;
+  totalRecords: number = 0;
   // routeId: number = 0;
   constructor(private route: ActivatedRoute, private router: Router) {
     // this.routeId = Number(this.route.snapshot.paramMap.get('id'));
@@ -30,6 +31,7 @@ export class UserProfileComponent {
   getData() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.user = data[this.id - 1];
+    this.totalRecords = data.length;
   }
 
   // prev() {

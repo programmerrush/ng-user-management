@@ -28,6 +28,12 @@
     <div class="container">
       <div class="card card-profile shadow mt--300">
         <div class="px-4">
+          <a
+            href="javascript:void(0)"
+            routerLink="/"
+            class="btn btn-primary mt-4"
+            ><< Back to users</a
+          >
           <div class="row justify-content-center">
             <div class="col-lg-3 order-lg-2">
               <div class="card-profile-image">
@@ -41,7 +47,7 @@
               </div>
             </div>
             <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
-              <div class="card-profile-actions py-4 mt-lg-0">
+              <!-- <div class="card-profile-actions py-4 mt-lg-0">
                 <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4"
                   >Add
                 </a>
@@ -50,7 +56,7 @@
                   class="btn btn-sm btn-default float-right"
                   >Remove
                 </a>
-              </div>
+              </div> -->
             </div>
             <div class="col-lg-4 order-lg-1">
               <div class="card-profile-stats d-flex justify-content-center">
@@ -62,15 +68,17 @@
                   <span class="description">Prev</span>
                   }
                 </div>
-                <div>
+                <!-- <div>
                   <span class="heading">22</span>
                   <span class="description">Groups</span>
-                </div>
+                </div> -->
                 <div>
+                  @if (id< totalRecords) {
                   <a [routerLink]="'/profile/' + (id + 1)">
                     <span class="heading">>></span></a
                   >
                   <span class="description">Next</span>
+                  }
                 </div>
               </div>
             </div>
